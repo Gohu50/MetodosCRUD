@@ -8,7 +8,7 @@ class Program
     {
         consultarCliente();
         agregarCliente();
-        Eliminar();
+
         modificarClientes();
     }
 
@@ -34,17 +34,6 @@ class Program
         }
     }
 
-    public static void Eliminar()
-    {
-        Console.WriteLine("Metodo eliminar estudiante por Id");
-        ServicioContext context = new ServicioContext();
-        Cliente cli = new Cliente();
-        cli = context.Clientes.Find(4);
-        context.Remove(cli);
-        context.SaveChanges();
-
-        Console.WriteLine("Codigo: " + cli.Id + " Nombre: " + cli.Nombre+ "Apellido: "+cli.Apellido+ "Dirección: " + cli.Dirección + "Fecha Nacimiento: " + cli.FechaNacimiento + "Estado: " + Convert.ToString(cli.Estado));
-    }
 
     public static void consultarCliente()
     {
